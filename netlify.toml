@@ -2,8 +2,11 @@
   functions = "netlify/functions"
   publish = "."
 
-# Redirección para las funciones
+[build.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+
 [[redirects]]
   from = "/.netlify/functions/*"
   to = "/.netlify/functions/:splat"
   status = 200
+  force = true

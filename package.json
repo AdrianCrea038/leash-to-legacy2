@@ -2,6 +2,10 @@
   "name": "leash-to-legacy",
   "version": "1.0.0",
   "description": "Leash to Legacy website",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'No build required'"
+  },
   "dependencies": {
     "@octokit/rest": "^20.0.0"
   }
