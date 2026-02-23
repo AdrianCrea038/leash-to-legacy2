@@ -1,0 +1,8 @@
+{
+  "name": "leash-to-legacy",
+  "version": "1.0.0",
+  "description": "Leash to Legacy website",
+  "dependencies": {
+    "@octokit/rest": "^20.0.0"
+  }
+}
