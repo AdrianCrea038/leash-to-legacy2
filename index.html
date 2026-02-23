@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Leash to Legacy - Dog Obedience & Service Dog Training</title>
+  
+  <!-- Preconnect para fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.min.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="service-link">Services <span class="arrow">▼</span></a>
+            <ul class="dropdown-content">
+              <li><a href="puppy-concierge.html">Puppy Concierge</a></li>
+              <li><a href="boarding-service.html">Boarding Service</a></li>
+              <li><a href="training-services.html">Training Services</a></li>
+            </ul>
+          </li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-logo">
+        <a href="index.html"><img src="IMG/Logo.png" alt="Leash to Legacy Logo" width="85"></a>
+      </div>
+
+      <div class="header-right">
+        <span class="phone"><i class="fas fa-phone-alt"></i> 904-563-7550</span>
+        <div class="login-group">
+          <img src="IMG/icono-login.png" alt="Login Icon" class="login-icon" width="26">
+          <a href="#" class="login-btn">Login</a>
+        </div>
+      </div>
+
+      <button class="menu-toggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-wrapper">
+      <div class="left-paws">
+        <img src="IMG/huella.png" alt="Paw" class="paw small">
+        <img src="IMG/huella.png" alt="Paw" class="paw small">
+      </div>
+
+      <div class="hero-center">
+        <h2 id="hero-subtitle">DOG OBEDIENCE AND SERVICE DOG TRAINING</h2>
+        <img src="IMG/Logo.png" alt="Leash to Legacy Logo" class="logo-large">
+        <div class="hero-buttons">
+          <a href="#contact" class="btn dark">CONTACT US</a>
+          <a href="#about" class="btn yellow">LEARN MORE ABOUT US</a>
+        </div>
+      </div>
+
+      <img id="hero-image" src="IMG/Perro home.png" alt="Happy Beagle" class="hero-dog flipped">
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about" class="about">
+    <h2 id="about-title">About Us</h2>
+    <div class="about-grid">
+      <div class="about-text" id="about-content">
+        <p>We are so glad you stopped by our webpage! Our main goal is to make you and your pup a better functioning, safe team. We begin our instruction in your home. This allows me to see your house and dog in action. We will discuss your ideas and what you want from our sessions. We can start in the first session with beginning commands: sit, down, touch/boop. From there, we can create a teaching schedule the whole family can be part of. Learning for a dog can have its limitations as a human learning, patience, and repetition. I was taught Positive Reinforcement; this is safer and keeps your dog attentive. Reach out on our contact page, and I will get back with you! You are going to make a great team!</p>
+      </div>
+      <div class="about-image">
+        <img src="IMG/bio.png" alt="Trainer with puppy" class="circle-img">
+      </div>
+    </div>
+    <img src="IMG/Pata-perro.png" alt="" class="pata-perro">
+    <img src="IMG/Cola-perro.png" alt="" class="cola-perro">
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="contact-wrapper">
+      <img src="IMG/Logo-contact.png" alt="" class="watermark-logo">
+      <h2>Contact</h2>
+
+      <form class="contact-form" id="contact-form">
+        <input type="text" name="name" placeholder="NAME" required />
+        <input type="email" name="email" placeholder="EMAIL" required />
+        <input type="tel" name="phone" placeholder="PHONE (optional)" />
+        <textarea name="message" placeholder="MESSAGE" required></textarea>
+        <button type="submit">SEND MESSAGE</button>
+      </form>
+      <p id="contact-form-status" class="contact-form-status"></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <p>Shawn Phillips</p>
+        <p>shawn@leashtolegacy.org</p>
+        <p>904-563-7550</p>
+        <div class="social">
+          <a href="#" target="_blank" aria-label="Facebook"><img src="IMG/facebook-logo.png" alt="Facebook"></a>
+          <a href="#" target="_blank" aria-label="Instagram"><img src="IMG/instagram-logo.png" alt="Instagram"></a>
+          <a href="#" target="_blank" aria-label="TikTok"><img src="IMG/tiktok-logo.png" alt="TikTok"></a>
+          <a href="#" target="_blank" aria-label="YouTube"><img src="IMG/youtube-logo.png" alt="YouTube"></a>
+          <a href="#" target="_blank" aria-label="WhatsApp"><img src="IMG/whatsapp-logo.png" alt="WhatsApp"></a>
+        </div>
+      </div>
+    </div>
+    <p class="copyright">© 2025 Leash to Legacy. All rights reserved.</p>
+  </footer>
+
+  <!-- Script de login -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const loginBtns = document.querySelectorAll('.login, .login-btn, [class*="login"]');
+      loginBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.location.href = 'login.html';
+        });
+      });
+    });
+  </script>
+
+  <!-- Script para enviar el formulario de contacto -->
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const btn = this.querySelector('button');
+      const status = document.getElementById('contact-form-status');
+      const formData = {
+        name: this.querySelector('[name="name"]').value,
+        email: this.querySelector('[name="email"]').value,
+        phone: this.querySelector('[name="phone"]').value,
+        message: this.querySelector('[name="message"]').value
+      };
+
+      try {
+        const response = await fetch('/site-data.json?t=' + Date.now());
+        const data = await response.json();
+        formData.recipient = data.email_recipient || 'shawn@leashtolegacy.org';
+      } catch {
+        formData.recipient = 'shawn@leashtolegacy.org';
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      try {
+        const res = await fetch('/.netlify/functions/send-contact-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+
+        if (res.ok) {
+          status.textContent = '✓ Message sent successfully!';
+          status.className = 'contact-form-status success';
+          this.reset();
+        } else {
+          throw new Error('Failed to send');
+        }
+      } catch (err) {
+        status.textContent = '✗ Error sending message. Please try again.';
+        status.className = 'contact-form-status error';
+      }
+
+      btn.disabled = false;
+      btn.textContent = 'SEND MESSAGE';
+    });
+  </script>
+
+  <!-- Script para cargar contenido dinámico (SIN CACHÉ) -->
+  <script>
+    async function loadContent() {
+      try {
+        const response = await fetch('/site-data.json?t=' + Date.now());
+        const data = await response.json();
+        console.log('Datos cargados:', data);
+        
+        if (data.hero) {
+          const heroSubtitle = document.getElementById('hero-subtitle');
+          const heroImage = document.getElementById('hero-image');
+          if (heroSubtitle && data.hero.subtitulo) {
+            heroSubtitle.textContent = data.hero.subtitulo;
+          }
+          if (heroImage && data.hero.imagen) {
+            heroImage.src = data.hero.imagen;
+          }
+        }
+        
+        if (data.about_us) {
+          const aboutTitle = document.getElementById('about-title');
+          const aboutContent = document.getElementById('about-content');
+          if (aboutTitle && data.about_us.titulo) {
+            aboutTitle.textContent = data.about_us.titulo;
+          }
+          if (aboutContent && data.about_us.texto) {
+            aboutContent.innerHTML = `<p>${data.about_us.texto.replace(/\n\n/g, '</p><p>')}</p>`;
+          }
+        }
+        
+        if (data.redes_sociales) {
+          const socialLinks = document.querySelectorAll('.social a');
+          if (socialLinks.length >= 5) {
+            socialLinks[0].href = data.redes_sociales.facebook || '#';
+            socialLinks[1].href = data.redes_sociales.instagram || '#';
+            socialLinks[2].href = data.redes_sociales.tiktok || '#';
+            socialLinks[3].href = data.redes_sociales.youtube || '#';
+            socialLinks[4].href = data.redes_sociales.whatsapp || '#';
+          }
+        }
+        
+      } catch (error) {
+        console.log('Usando contenido por defecto');
+      }
+    }
+    
+    loadContent();
+    
+    document.addEventListener('visibilitychange', function() {
+      if (!document.hidden) {
+        loadContent();
+      }
+    });
+  </script>
+</body>
+</html>

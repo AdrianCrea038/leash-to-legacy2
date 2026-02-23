@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Puppy Concierge | Leash to Legacy</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.min.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/puppy-concierge.css">
+</head>
+<body class="puppy-concierge-page">
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="header-logo">
+        <a href="index.html">
+          <img src="IMG/Logo.png" alt="Leash to Legacy Logo" width="110">
+        </a>
+      </div>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="service-link">
+              Services <i class="fas fa-chevron-down arrow"></i>
+            </a>
+            <ul class="dropdown-content">
+              <li><a href="puppy-concierge.html">Puppy Concierge</a></li>
+              <li><a href="boarding-service.html">Boarding Service</a></li>
+              <li><a href="training-services.html">Training Services</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-right">
+        <span class="phone"><i class="fas fa-phone-alt"></i> 904-563-7550</span>
+        <div class="login-group">
+          <img src="IMG/icono-login.png" alt="Login" class="login-icon" width="26">
+          <a href="#" class="login-btn">Login</a>
+        </div>
+      </div>
+
+      <button class="menu-toggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="main-content">
+    <section class="puppy-concierge-section">
+      <div class="container">
+        <div class="puppy-grid">
+          <div class="puppy-text">
+            <h1 id="puppy-title">Puppy Concierge</h1>
+            <p id="puppy-content">From the moment your new puppy joins your family, we're here to help make the transition smooth and joyful. Our Puppy Concierge Service offers personalized guidance, home visits, basic training foundations, potty training support, and answers to all your new-puppy questions. We help set your pup up for success and give you peace of mind during those exciting (and sometimes overwhelming) first months.</p>
+          </div>
+
+          <div class="puppy-image">
+            <img id="puppy-image" src="IMG/Puppy-Concierge.png" alt="Puppy Concierge" class="main-image">
+            <img src="IMG/sombra.png" alt="" class="sombra-float">
+            <img src="IMG/Cola-perro.png" alt="" class="cola-float">
+            <img src="IMG/Pata-perro.png" alt="" class="pata-float">
+            <img src="IMG/huella.png" alt="" class="huella-float huella-1">
+            <img src="IMG/huella.png" alt="" class="huella-float huella-2">
+            <img src="IMG/huella.png" alt="" class="huella-float huella-3">
+            <img src="IMG/huella.png" alt="" class="huella-float huella-4">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <p><strong>Shawn Phillips</strong></p>
+          <p><a href="mailto:shawn@leashtolegacy.org">shawn@leashtolegacy.org</a></p>
+          <p><a href="tel:+19045637550">904-563-7550</a></p>
+
+          <div class="social-links">
+            <a href="#" target="_blank" aria-label="Facebook"><img src="IMG/facebook-logo.png" alt="Facebook"></a>
+            <a href="#" target="_blank" aria-label="Instagram"><img src="IMG/instagram-logo.png" alt="Instagram"></a>
+            <a href="#" target="_blank" aria-label="TikTok"><img src="IMG/tiktok-logo.png" alt="TikTok"></a>
+            <a href="#" target="_blank" aria-label="YouTube"><img src="IMG/youtube-logo.png" alt="YouTube"></a>
+            <a href="#" target="_blank" aria-label="WhatsApp"><img src="IMG/whatsapp-logo.png" alt="WhatsApp"></a>
+          </div>
+        </div>
+      </div>
+      <p class="copyright">© 2025 Leash to Legacy. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Script de login -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const loginBtns = document.querySelectorAll('.login, .login-btn, [class*="login"]');
+      loginBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.location.href = 'login.html';
+        });
+      });
+    });
+  </script>
+
+  <!-- Script para cargar contenido (SIN CACHÉ) -->
+  <script>
+    async function loadPuppyContent() {
+      try {
+        const response = await fetch('/site-data.json?t=' + Date.now());
+        const data = await response.json();
+        console.log('Puppy data:', data);
+        
+        if (data.puppy) {
+          const title = document.getElementById('puppy-title');
+          const content = document.getElementById('puppy-content');
+          const image = document.getElementById('puppy-image');
+          
+          if (title && data.puppy.titulo) title.textContent = data.puppy.titulo;
+          if (content && data.puppy.texto) content.textContent = data.puppy.texto;
+          if (image && data.puppy.imagen) image.src = data.puppy.imagen;
+        }
+      } catch (error) {
+        console.log('Usando contenido por defecto');
+      }
+    }
+    
+    loadPuppyContent();
+    
+    document.addEventListener('visibilitychange', function() {
+      if (!document.hidden) {
+        loadPuppyContent();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Leash to Legacy Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .login-container {
+      background: white;
+      border-radius: 24px;
+      padding: 40px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      position: relative;
+    }
+    
+    .back-home {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: #666;
+      text-decoration: none;
+      font-size: 14px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: all 0.2s;
+    }
+    
+    .back-home:hover {
+      background: #f0f0f0;
+      color: #333;
+    }
+    
+    h1 {
+      text-align: center;
+      color: #333;
+      margin: 40px 0 30px;
+      font-size: 32px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #555;
+    }
+    
+    .form-group input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      font-size: 16px;
+      box-sizing: border-box;
+      transition: all 0.2s;
+    }
+    
+    .form-group input:focus {
+      outline: none;
+      border-color: #4a90e2;
+      box-shadow: 0 0 0 3px rgba(74,144,226,0.1);
+    }
+    
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 10px;
+    }
+    
+    button:hover {
+      background: #3a7bc8;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(74,144,226,0.3);
+    }
+    
+    .error {
+      color: #e74c3c;
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+      min-height: 20px;
+    }
+    
+    .options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 15px 0;
+      font-size: 0.9rem;
+    }
+    
+    .remember {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      color: #555;
+    }
+    
+    .remember input[type="checkbox"] {
+      width: auto;
+      margin: 0;
+    }
+    
+    .forgot {
+      color: #4a90e2;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .forgot:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <a href="index.html" class="back-home">← Back to Home</a>
+    <h1>Admin Login</h1>
+    
+    <form id="login-form">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter username" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="••••••••" required>
+      </div>
+      
+      <div class="options">
+        <label class="remember">
+          <input type="checkbox" id="remember"> 
+          <span>Remember me</span>
+        </label>
+        <a href="#" class="forgot" id="forgotPassword">Forgot password?</a>
+      </div>
+      
+      <button type="submit">Sign In</button>
+      <div id="login-error" class="error"></div>
+    </form>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const loginForm = document.getElementById('login-form');
+      const errorDiv = document.getElementById('login-error');
+      const forgotLink = document.getElementById('forgotPassword');
+      const rememberCheck = document.getElementById('remember');
+      const usernameInput = document.getElementById('username');
+      
+      // Cargar usuario guardado
+      const savedUser = localStorage.getItem('saved_username');
+      if (savedUser) {
+        usernameInput.value = savedUser;
+        rememberCheck.checked = true;
+      }
+      
+      // Forgot password
+      forgotLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('Please contact the administrator:\n\nEmail: shawn@leashtolegacy.org\nPhone: 904-563-7550');
+      });
+      
+      // Login
+      loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const username = usernameInput.value.trim();
+        const password = document.getElementById('password').value.trim();
+        
+        if (!username || !password) {
+          errorDiv.textContent = 'Please enter username and password';
+          return;
+        }
+        
+        if (username === 'admin' && password === 'leash2025') {
+          if (rememberCheck.checked) {
+            localStorage.setItem('saved_username', username);
+          } else {
+            localStorage.removeItem('saved_username');
+          }
+          
+          localStorage.setItem('isAuthenticated', 'true');
+          localStorage.setItem('user', username);
+          window.location.href = 'panel.html';
+        } else {
+          errorDiv.textContent = 'Invalid username or password';
+          document.getElementById('password').value = '';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

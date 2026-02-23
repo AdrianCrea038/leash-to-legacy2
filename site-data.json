@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "imagen": "IMG/Perro home.png",
+    "subtitulo": "DOG OBEDIENCE AND SERVICE DOG TRAINING"
+  },
+  "about_us": {
+    "titulo": "About Us",
+    "texto": "We are so glad you stopped by our webpage! Our main goal is to make you and your pup a better functioning, safe team. We begin our instruction in your home. This allows me to see your house and dog in action. We will discuss your ideas and what you want from our sessions. We can start in the first session with beginning commands: sit, down, touch/boop. From there, we can create a teaching schedule the whole family can be part of. Learning for a dog can have its limitations as a human learning, patience, and repetition. I was taught Positive Reinforcement; this is safer and keeps your dog attentive. Reach out on our contact page, and I will get back with you! You are going to make a great team!"
+  },
+  "boarding": {
+    "titulo": "Boarding Service",
+    "texto": "A second home for your best friend. We know your puppy is part of your family. Our Puppy Boarding Service is designed to provide a safe, loving, and fun environment while you're away. Here, they don't just stay — they feel at home.",
+    "imagen": "IMG/Boarding-Service.png"
+  },
+  "puppy": {
+    "titulo": "Puppy Concierge",
+    "texto": "From the moment your new puppy joins your family, we're here to help make the transition smooth and joyful. Our Puppy Concierge Service offers personalized guidance, home visits, basic training foundations, potty training support, and answers to all your new-puppy questions. We help set your pup up for success and give you peace of mind during those exciting (and sometimes overwhelming) first months.",
+    "imagen": "IMG/Puppy-Concierge.png"
+  },
+  "blog": {
+    "titulo": "Positive Reinforcement: Why It Works for Your Dog",
+    "texto": "At Leash to Legacy we believe that training should be a joyful experience for both you and your pup. Positive reinforcement isn't just a method — it's a philosophy that builds trust, keeps your dog attentive, and creates a stronger bond.\n\nWe start with basics like sit, down, and touch/boop in the comfort of your home. Seeing your house and your dog in action helps us design a teaching schedule the whole family can be part of. Patience and repetition are key, and we're here to support you every step of the way.\n\nReach out on our contact page — you're going to make a great team!",
+    "imagen": "IMG/bio.png"
+  },
+  "redes_sociales": {
+    "facebook": "#",
+    "instagram": "#",
+    "tiktok": "#",
+    "youtube": "#",
+    "whatsapp": "#"
+  },
+  "training_videos": [],
+  "email_recipient": "shawn@leashtolegacy.org"
+}

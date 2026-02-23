@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Training Services | Leash to Legacy</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.min.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/training-services.css">
+  
+  <!-- Plyr CSS -->
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+</head>
+<body class="training-page">
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="header-logo">
+        <a href="index.html">
+          <img src="IMG/Logo.png" alt="Leash to Legacy Logo" width="110">
+        </a>
+      </div>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="service-link">
+              Services <i class="fas fa-chevron-down arrow"></i>
+            </a>
+            <ul class="dropdown-content">
+              <li><a href="puppy-concierge.html">Puppy Concierge</a></li>
+              <li><a href="boarding-service.html">Boarding Service</a></li>
+              <li><a href="training-services.html">Training Services</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-right">
+        <span class="phone"><i class="fas fa-phone-alt"></i> 904-563-7550</span>
+        <div class="login-group">
+          <img src="IMG/icono-login.png" alt="Login" class="login-icon" width="26">
+          <a href="#" class="login-btn">Login</a>
+        </div>
+      </div>
+
+      <button class="menu-toggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <div class="container">
+    <h1 class="section-title">Training Services</h1>
+    <p class="section-subtitle">Watch our training videos and learn with your dog</p>
+
+    <!-- Botones de filtro -->
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="basic-commands">Basic Commands</button>
+      <button class="filter-btn" data-filter="potty-training">Potty Training</button>
+      <button class="filter-btn" data-filter="reactive-dog">Reactive Dog</button>
+      <button class="filter-btn" data-filter="fun-tricks">Fun Tricks</button>
+    </div>
+
+    <!-- Grid de videos -->
+    <div class="videos-grid" id="videos-grid">
+      <!-- Los videos se cargarán aquí -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <p><strong>Shawn Phillips</strong></p>
+          <p><a href="mailto:shawn@leashtolegacy.org">shawn@leashtolegacy.org</a></p>
+          <p><a href="tel:+19045637550">904-563-7550</a></p>
+
+          <div class="social-links">
+            <a href="#" target="_blank" aria-label="Facebook"><img src="IMG/facebook-logo.png" alt="Facebook"></a>
+            <a href="#" target="_blank" aria-label="Instagram"><img src="IMG/instagram-logo.png" alt="Instagram"></a>
+            <a href="#" target="_blank" aria-label="TikTok"><img src="IMG/tiktok-logo.png" alt="TikTok"></a>
+            <a href="#" target="_blank" aria-label="YouTube"><img src="IMG/youtube-logo.png" alt="YouTube"></a>
+            <a href="#" target="_blank" aria-label="WhatsApp"><img src="IMG/whatsapp-logo.png" alt="WhatsApp"></a>
+          </div>
+        </div>
+      </div>
+      <p class="copyright">© 2025 Leash to Legacy. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Script de login -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const loginBtns = document.querySelectorAll('.login, .login-btn, [class*="login"]');
+      loginBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.location.href = 'login.html';
+        });
+      });
+    });
+  </script>
+
+  <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+  <script>
+    // =============================================
+    // VIDEOS - Cargar desde site-data.json
+    // =============================================
+    (function() {
+      const videosGrid = document.getElementById('videos-grid');
+      if (!videosGrid) return;
+      
+      // Videos de ejemplo por si no hay datos
+      const demoVideos = [
+        {
+          id: 1,
+          title: 'Basic Commands: Sit and Stay',
+          description: 'Learn how to teach your dog to sit and stay',
+          url: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+          categories: ['basic-commands']
+        },
+        {
+          id: 2,
+          title: 'Potty Training Tips',
+          description: 'Effective methods for house training',
+          url: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+          categories: ['potty-training']
+        },
+        {
+          id: 3,
+          title: 'Reactive Dog Training',
+          description: 'Help your reactive dog become calm',
+          url: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
+          categories: ['reactive-dog']
+        }
+      ];
+
+      function renderVideos(videos) {
+        videosGrid.innerHTML = '';
+
+        if (!videos || videos.length === 0) {
+          videosGrid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 40px;">No videos added yet. Add some in the admin panel.</p>';
+          return;
+        }
+
+        videos.forEach(video => {
+          const card = document.createElement('div');
+          card.className = 'video-card';
+          card.dataset.categories = video.categories?.join(',') || '';
+
+          card.innerHTML = `
+            <video class="plyr-video" controls playsinline>
+              <source src="${video.url}" type="video/mp4">
+              Your browser does not support video.
+            </video>
+            <h3>${video.title}</h3>
+            <p>${video.description || ''}</p>
+          `;
+          videosGrid.appendChild(card);
+        });
+
+        // Inicializar Plyr
+        if (typeof Plyr !== 'undefined') {
+          document.querySelectorAll('.plyr-video').forEach(video => {
+            new Plyr(video);
+          });
+        }
+      }
+
+      async function loadVideos() {
+        try {
+          const response = await fetch('/site-data.json?' + Date.now());
+          const data = await response.json();
+          renderVideos(data.training_videos || []);
+        } catch (error) {
+          console.log('Using demo videos');
+          renderVideos(demoVideos);
+        }
+      }
+
+      loadVideos();
+
+      // Filtros
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+
+          const filter = this.dataset.filter;
+          document.querySelectorAll('.video-card').forEach(card => {
+            if (filter === 'all' || card.dataset.categories.includes(filter)) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

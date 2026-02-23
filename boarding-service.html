@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Boarding Service | Leash to Legacy</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.min.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/style-boarding.css">
+</head>
+<body class="boarding-page">
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="header-logo">
+        <a href="index.html">
+          <img src="IMG/Logo.png" alt="Leash to Legacy Logo" width="110">
+        </a>
+      </div>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="service-link">
+              Services <i class="fas fa-chevron-down arrow"></i>
+            </a>
+            <ul class="dropdown-content">
+              <li><a href="puppy-concierge.html">Puppy Concierge</a></li>
+              <li><a href="boarding-service.html">Boarding Service</a></li>
+              <li><a href="training-services.html">Training Services</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-right">
+        <span class="phone"><i class="fas fa-phone-alt"></i> 904-563-7550</span>
+        <div class="login-group">
+          <img src="IMG/icono-login.png" alt="Login" class="login-icon" width="26">
+          <a href="#" class="login-btn">Login</a>
+        </div>
+      </div>
+
+      <button class="menu-toggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="main-content">
+    <section class="boarding-info">
+      <div class="container">
+        <div class="boarding-grid">
+          <div class="boarding-text">
+            <h2 id="boarding-title">Boarding Service</h2>
+            <p id="boarding-content">A second home for your best friend. We know your puppy is part of your family. Our Puppy Boarding Service is designed to provide a safe, loving, and fun environment while you're away. Here, they don't just stay — they feel at home.</p>
+          </div>
+
+          <div class="boarding-image">
+            <div class="circle-yellow"></div>
+            <img src="IMG/sombra.png" alt="" class="sombra-float">
+            <img id="boarding-image" src="IMG/Boarding-Service.png" alt="Happy dog" class="main-image">
+            <img src="IMG/perrito.png" alt="" class="perrito-float right">
+            <img src="IMG/perrito.png" alt="" class="perrito-float left">
+            <img src="IMG/Cola-perro.png" alt="" class="cola-float">
+            <img src="IMG/Pata-perro.png" alt="" class="pata-float">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <p><strong>Shawn Phillips</strong></p>
+          <p><a href="mailto:shawn@leashtolegacy.org">shawn@leashtolegacy.org</a></p>
+          <p><a href="tel:+19045637550">904-563-7550</a></p>
+
+          <div class="social-links">
+            <a href="#" target="_blank" aria-label="Facebook"><img src="IMG/facebook-logo.png" alt="Facebook"></a>
+            <a href="#" target="_blank" aria-label="Instagram"><img src="IMG/instagram-logo.png" alt="Instagram"></a>
+            <a href="#" target="_blank" aria-label="TikTok"><img src="IMG/tiktok-logo.png" alt="TikTok"></a>
+            <a href="#" target="_blank" aria-label="YouTube"><img src="IMG/youtube-logo.png" alt="YouTube"></a>
+            <a href="#" target="_blank" aria-label="WhatsApp"><img src="IMG/whatsapp-logo.png" alt="WhatsApp"></a>
+          </div>
+        </div>
+      </div>
+      <p class="copyright">© 2025 Leash to Legacy. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Script de login -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const loginBtns = document.querySelectorAll('.login, .login-btn, [class*="login"]');
+      loginBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.location.href = 'login.html';
+        });
+      });
+    });
+  </script>
+
+  <!-- Script para cargar contenido (SIN CACHÉ) -->
+  <script>
+    async function loadBoardingContent() {
+      try {
+        const response = await fetch('/site-data.json?t=' + Date.now());
+        const data = await response.json();
+        console.log('Boarding data:', data);
+        
+        if (data.boarding) {
+          const title = document.getElementById('boarding-title');
+          const content = document.getElementById('boarding-content');
+          const image = document.getElementById('boarding-image');
+          
+          if (title && data.boarding.titulo) title.textContent = data.boarding.titulo;
+          if (content && data.boarding.texto) content.textContent = data.boarding.texto;
+          if (image && data.boarding.imagen) image.src = data.boarding.imagen;
+        }
+      } catch (error) {
+        console.log('Usando contenido por defecto');
+      }
+    }
+    
+    loadBoardingContent();
+    
+    document.addEventListener('visibilitychange', function() {
+      if (!document.hidden) {
+        loadBoardingContent();
+      }
+    });
+  </script>
+
+  <!-- FIX: Textos por encima del círculo amarillo -->
+  <style>
+    .boarding-text {
+      position: relative;
+      z-index: 10;
+      background-color: transparent;
+    }
+    .circle-yellow {
+      z-index: 1 !important;
+    }
+    .boarding-grid {
+      position: relative;
+      z-index: 5;
+    }
+    .boarding-image {
+      z-index: 2;
+    }
+  </style>
+</body>
+</html>

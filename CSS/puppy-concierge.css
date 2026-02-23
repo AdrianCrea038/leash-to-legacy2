@@ -1,0 +1,389 @@
+/* ==================================================
+   PUPPY-CONCIERGE.CSS - Estilos completos y corregidos
+   ================================================== */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body.puppy-concierge-page {
+  font-family: 'Nunito', sans-serif;
+  background: #A0CDEA;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding-top: 80px;
+}
+
+/* Header (ya está en main.min.css, pero lo mantenemos por si acaso) */
+header {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 12px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 4px;
+}
+
+.main-nav a {
+  padding: 8px 20px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.main-nav a:hover { color: #f8dea2; }
+
+.arrow {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 0.85rem;
+  transition: transform 0.3s;
+}
+
+.dropdown:hover .arrow { transform: rotate(180deg); }
+
+.dropdown { position: relative; }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: white;
+  min-width: 210px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  top: 100%;
+  left: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content li {
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-content li:last-child { border-bottom: none; }
+
+.dropdown-content a {
+  display: block;
+  padding: 14px 20px;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.98rem;
+}
+
+.dropdown-content a:hover { background: #f0f8ff; }
+
+.header-logo img {
+  max-height: 50px;
+  width: auto;
+  display: block;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.phone {
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: #444;
+  white-space: nowrap;
+}
+
+.login-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.login-icon { vertical-align: middle; }
+
+.login, .login-btn {
+  background: #4a90e2;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.3s;
+  cursor: pointer;
+  border: none;
+}
+
+.login:hover, .login-btn:hover {
+  background: #3a7bc8;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Contenido principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.puppy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  padding: 60px 40px;
+}
+
+.puppy-text h1 {
+  font-size: 3rem;
+  color: #383838;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.puppy-text p {
+  font-size: 1.18rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+/* Imágenes */
+.puppy-image {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.main-image {
+  width: 140%;
+  max-width: 720px;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Elementos flotantes */
+.sombra-float {
+  position: absolute;
+  top: 87%;
+  left: 1%;
+  width: 150%;
+  max-width: 780px;
+  height: auto;
+  z-index: 1;
+  opacity: 0.8;
+  pointer-events: none;
+  filter: blur(3px) brightness(0.65);
+}
+
+.cola-float {
+  position: absolute;
+  top: -50px;
+  right: -150px;
+  width: 180px;
+  height: auto;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0.95;
+  transform: rotate(15deg);
+}
+
+.pata-float {
+  position: absolute;
+  top: -30px;
+  left: -300px;
+  width: 270px;
+  height: auto;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0.95;
+  transform: rotate(-10deg);
+}
+
+.huella-float {
+  position: absolute;
+  width: 55px;
+  height: auto;
+  opacity: 0.65;
+  pointer-events: none;
+  z-index: 3;
+  filter: blur(0.8px);
+}
+
+.huella-1 { bottom: 70%; left: 120%; transform: rotate(-45deg); }
+.huella-2 { bottom: 60%; left: 110%; transform: rotate(-45deg); }
+.huella-3 { bottom: 55%; left: 130%; transform: rotate(-45deg); }
+.huella-4 { bottom: 45%; left: 120%; transform: rotate(-45deg); }
+
+/* Footer */
+footer {
+  background: #fcdc99;
+  color: #333;
+  padding: 50px 20px 30px;
+  margin-top: 60px;
+  text-align: center;
+}
+
+footer .container { max-width: 1200px; margin: 0 auto; }
+.footer-content { margin-bottom: 40px; }
+
+.footer-info {
+  display: inline-block;
+  text-align: center;
+  max-width: 400px;
+}
+
+.footer-info p {
+  margin: 8px 0;
+  font-size: 0.98rem;
+  font-weight: 500;
+}
+
+.footer-info a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-info a:hover { color: #4a90e2; }
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.social-links a { transition: transform 0.3s; }
+
+.social-links img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.social-links a:hover img {
+  transform: translateY(-6px) scale(1.15);
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: #555;
+  padding-top: 20px;
+  border-top: 1px solid rgba(51,51,51,0.1);
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .cola-float { right: -100px; width: 150px; }
+  .pata-float { left: -200px; width: 220px; }
+}
+
+@media (max-width: 950px) {
+  .puppy-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .puppy-text h1 { font-size: 2.4rem; }
+  
+  .main-image {
+    width: 110%;
+    max-width: 100%;
+  }
+  
+  .sombra-float {
+    width: 118%;
+    top: 10%;
+    left: 6%;
+  }
+  
+  .cola-float {
+    width: 120px;
+    top: -60px;
+    right: -40px;
+  }
+  
+  .pata-float {
+    width: 180px;
+    top: -55px;
+    left: -60px;
+  }
+  
+  .huella-float { width: 40px; }
+  .huella-1 { bottom: 15%; left: -12%; }
+  .huella-2 { bottom: 10%; left: 8%; }
+  .huella-3 { bottom: 6%; left: 25%; }
+  .huella-4 { bottom: 2%; left: 42%; }
+}
+
+@media (max-width: 768px) {
+  body.puppy-concierge-page { padding-top: 68px; }
+  
+  .menu-toggle { display: block; }
+  
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .main-nav.active { display: block; }
+  
+  .main-nav.active ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .header-right { gap: 10px; }
+  .phone { font-size: 0.85rem; }
+  
+  .social-links { gap: 20px; }
+  .social-links img { width: 38px; height: 38px; }
+}
